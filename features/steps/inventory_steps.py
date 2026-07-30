@@ -41,4 +41,4 @@ def step_impl(context, product, quantity):
         f'{product} was not found'
 
     assert context.inventory[product] == int(quantity), \
-        f'Expected quantity {quantity} but got {context.inventory[product]
+        f'Expected quantity {quantity} but got {context.inventory[product]}'

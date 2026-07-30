@@ -57,3 +57,15 @@ def step_impl(context):
 @then('the output should contain "{product}"')
 def step_impl(context, product):
     assert product in context.output, f"{product} was not found in the output"
+
+@when('the user removes "{product}"')
+def step_impl(context, product):
+    if product in context.inventory:
+        del context.inventory[product]
+        context.output = f"Product {product} was removed"
+    else:
+        context.output = f"Product {product} was not found"
+
+@then('the inventory should not contain "{product}"')
+def step_impl(context, product):
+    assert product not in context.inventory, f"{product} is still in the inventory"

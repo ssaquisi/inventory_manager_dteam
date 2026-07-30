@@ -11,7 +11,7 @@ def step_impl(context, product):
 
 @then('the inventory should contain "{product}"')
 def step_impl(context, product):
-    assert product in context.inventory, \
+    assert product in context.inventory,
         f'{product} was not found in the inventory'
 
 @given('the inventory contains:')
@@ -37,8 +37,8 @@ def step_impl(context, product, quantity):
 
 @then('product "{product}" should have quantity "{quantity}"')
 def step_impl(context, product, quantity):
-    assert product in context.inventory, \
+    assert product in context.inventory, 
         f'{product} was not found'
 
-    assert context.inventory[product] == int(quantity), \
+    assert context.inventory[product] == int(quantity), 
         f'Expected quantity {quantity} but got {context.inventory[product]}'

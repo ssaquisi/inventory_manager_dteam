@@ -69,3 +69,8 @@ def step_impl(context, product):
 @then('the inventory should not contain "{product}"')
 def step_impl(context, product):
     assert product not in context.inventory, f"{product} is still in the inventory"
+
+@then('the output should be "{message}"')
+def step_impl(context, message):
+    assert context.output == message, \
+        f'Expected "{message}" but got "{context.output}"'
